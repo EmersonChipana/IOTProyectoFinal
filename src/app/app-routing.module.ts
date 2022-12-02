@@ -7,8 +7,8 @@ import { SeleccionComponent } from './seleccion/seleccion.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  {path : 'login',component : LoginComponent},
-  { path: 'seleccion',component: SeleccionComponent},
+  { path : 'login', component : LoginComponent},
+  { path: 'seleccion', component: SeleccionComponent},
 ];
 
 @NgModule({

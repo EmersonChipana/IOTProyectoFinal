@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { GoogleService } from 'src/app/services/googleAuth/google.service';
 
 @Component({
   selector: 'app-login',
@@ -8,13 +9,13 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private auth: GoogleService) {}
 
   ngOnInit(): void {
   }
-  iniciarsesion() {
-    this.router.navigate(['/home']);
 
+  login(){
+    this.auth.GoogleAuth();
   }
 
 }
