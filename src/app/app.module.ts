@@ -14,6 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './pages/login/login.component';
 import { CardComponent } from './card/card.component';
 import { SeleccionComponent } from './seleccion/seleccion.component';
+import { IntegrantesComponent } from './integrantes/integrantes.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SeleccionComponent } from './seleccion/seleccion.component';
     NavbarComponent,
     LoginComponent,
     CardComponent,
-    SeleccionComponent
+    SeleccionComponent,
+    IntegrantesComponent
   ],
   imports: [
     BrowserModule,
