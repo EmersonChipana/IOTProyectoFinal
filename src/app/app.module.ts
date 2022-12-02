@@ -12,8 +12,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './pages/login/login.component';
-import { CardComponent } from './card/card.component';
-import { SeleccionComponent } from './seleccion/seleccion.component';
+import { CardComponent } from './components/navbar/card/card.component';
+import { SeleccionComponent } from './pages/seleccion/seleccion.component';
 import { IntegrantesComponent } from './integrantes/integrantes.component';
 
 @NgModule({
