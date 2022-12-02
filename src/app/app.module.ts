@@ -12,13 +12,17 @@ import { HomeComponent } from './pages/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './pages/login/login.component';
+import { CardComponent } from './card/card.component';
+import { SeleccionComponent } from './seleccion/seleccion.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavbarComponent,
-    LoginComponent
+    LoginComponent,
+    CardComponent,
+    SeleccionComponent
   ],
   imports: [
     BrowserModule,

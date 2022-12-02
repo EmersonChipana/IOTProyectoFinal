@@ -26,4 +26,31 @@
     </div>
   </nav>
   
-  <app-card></app-card>
+  <!-- add selection of color with sliders-->
+  <fieldset>
+    <label for="r">R</label>
+    <input type="range" min="0" max="255" id="r" step="1" value="0">
+    <output for="r" id="r_out">0</output>
+  </fieldset>  
+  
+  <fieldset>
+    <label for="g">G</label>
+    <input type="range" min="0" max="255" id="g" step="1" value="0">
+    <output for="g" id="g_out">0</output>
+  </fieldset>
+  
+  <fieldset>
+    <label for="b">B</label>
+    <input type="range" min="0" max="255" id="b" step="1" value="0">
+    <output for="b" id="b_out">0</output>
+  </fieldset>  
+  
+  <output id="hex">#000000</output>
+
+  <label for="favcolor">Select your favorite color:</label>
+<input type="color" id="favcolor" name="favcolor" value="#ff0000">
+
+<div class="contenedor">
+    <h1>aqui esta </h1>
+</div>
+  
