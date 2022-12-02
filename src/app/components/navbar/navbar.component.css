@@ -1,7 +1,16 @@
-.a{
-    opacity: 0.0;
-}
-.h1{
+
+.navbar{
+    background: #3e3e3e;
     color: white;
-    align-items: left;
 }
+
+a{
+    color: white;
+}
+
+.navbar .btn{
+    margin-left: auto;
+}
+.navbar a {
+    margin-right: 5rem;
+    color: #fff; }

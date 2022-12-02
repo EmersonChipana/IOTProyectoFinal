@@ -14,7 +14,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './pages/login/login.component';
 import { CardComponent } from './components/card/card.component';
 import { SeleccionComponent } from './pages/seleccion/seleccion.component';
-import { IntegrantesComponent } from './integrantes/integrantes.component';
+import { IntegrantesComponent } from './components/integrantes/integrantes.component';
+import { UserContainerComponent } from './components/user-container/user-container.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { IntegrantesComponent } from './integrantes/integrantes.component';
     LoginComponent,
     CardComponent,
     SeleccionComponent,
-    IntegrantesComponent
+    IntegrantesComponent,
+    UserContainerComponent
   ],
   imports: [
     BrowserModule,

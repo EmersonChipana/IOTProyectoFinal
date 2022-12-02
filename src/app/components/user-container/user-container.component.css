@@ -1,0 +1,16 @@
+.image{
+    width: 220px;
+    height: 200px;
+    border-radius: 40px;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+h2{
+    color: white;
+}
+
+h5{
+    color: white;
+}

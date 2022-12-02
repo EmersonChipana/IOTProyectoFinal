@@ -12,6 +12,9 @@ export class LoginComponent implements OnInit {
   constructor(private router: Router, private auth: GoogleService) {}
 
   ngOnInit(): void {
+    if(localStorage.getItem('uid') != null){
+      this.router.navigate(['/home']);
+    }
   }
 
   login(){

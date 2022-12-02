@@ -15,16 +15,25 @@ export class GoogleService {
   }
 
   GoogleSignOut() {
+    this.route.navigate(['/login']);
+    localStorage.clear();
     return this.auth.signOut();
   }
 
   async AuthLogin(provider: GoogleAuthProvider) {
     try {
       const result = await signInWithPopup(getAuth(), provider);
-      this.route.navigate(['home']);
-      alert(result.user.displayName);
+      var name = result.user.displayName;
+      var email = result.user.email;
+      var photo = result.user.photoURL;
+      var uid = result.user.uid;
+      localStorage.setItem('name', name ? name : '');
+      localStorage.setItem('email', email ? email : '');
+      localStorage.setItem('photo', photo ? photo : '');
+      localStorage.setItem('uid', uid);
+      this.route.navigate(['/home']);
     } catch (error) {
-      window.alert(error);
+      window.alert("Ocurrio un error al iniciar sesión con Google");
     }
   }
 
