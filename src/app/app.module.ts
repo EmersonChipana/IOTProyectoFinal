@@ -16,6 +16,7 @@ import { CardComponent } from './components/card/card.component';
 import { SeleccionComponent } from './pages/seleccion/seleccion.component';
 import { IntegrantesComponent } from './components/integrantes/integrantes.component';
 import { UserContainerComponent } from './components/user-container/user-container.component';
+import { FormularioComponent } from './components/formulario/formulario.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { UserContainerComponent } from './components/user-container/user-contain
     CardComponent,
     SeleccionComponent,
     IntegrantesComponent,
-    UserContainerComponent
+    UserContainerComponent,
+    FormularioComponent
   ],
   imports: [
     BrowserModule,
