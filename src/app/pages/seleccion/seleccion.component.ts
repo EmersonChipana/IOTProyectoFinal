@@ -13,9 +13,11 @@ export class SeleccionComponent implements OnInit {
   ngOnInit(): void {
     
   }
-  iniciarsesion() {
-    this.router.navigate(['/home']);
 
+  inputColor() {
+    var input = document.getElementById("color");
+    //var color = input.value;
   }
+
 
 }

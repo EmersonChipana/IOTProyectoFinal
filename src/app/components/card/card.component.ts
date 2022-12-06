@@ -12,8 +12,9 @@ export class CardComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  iniciarsesion() {
-    this.router.navigate(['/home']);
 
+
+  iniciarsesion() {
+    this.router.navigate(['/configuracion']);
   }
 }

@@ -1,56 +1,12 @@
+<app-navbar></app-navbar>
 
-<nav class="navbar navbar-dark bg-dark">
-    
-    <img (click)= "iniciarsesion()" src="../../../assets/img/logo2.png" alt="logo" width="90" height="84" > 
-    <a class="navbar-brand" href="#">RED DE ILUMINACION IOT</a>
-    <!--add an logo -->
-    
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-      </ul>
-      <span class="navbar-text">
-        Navbar text with an inline element
-      </span>
+<div class="container text-center my-5">
+  <div class="row my-5">
+    <h1>Cambiar color de LED</h1>
+  </div>
+  <div class="row">
+    <div class="col">
+      <input type="color" value="#ffffff" class="color" name="color" (input)="inputColor()" id="color">
     </div>
-  </nav>
-  
-  <!-- add selection of color with sliders-->
-  <fieldset>
-    <label for="r">R</label>
-    <input type="range" min="0" max="255" id="r" step="1" value="0">
-    <output for="r" id="r_out">0</output>
-  </fieldset>  
-  
-  <fieldset>
-    <label for="g">G</label>
-    <input type="range" min="0" max="255" id="g" step="1" value="0">
-    <output for="g" id="g_out">0</output>
-  </fieldset>
-  
-  <fieldset>
-    <label for="b">B</label>
-    <input type="range" min="0" max="255" id="b" step="1" value="0">
-    <output for="b" id="b_out">0</output>
-  </fieldset>  
-  
-  <output id="hex">#000000</output>
-
-  <label for="favcolor">Select your favorite color:</label>
-<input type="color" id="favcolor" name="favcolor" value="#ff0000">
-
-<div class="contenedor">
-    <h1>aqui esta </h1>
+  </div>
 </div>
-  
