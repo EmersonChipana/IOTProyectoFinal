@@ -6,6 +6,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SeleccionComponent } from './pages/seleccion/seleccion.component';
 import { SecuenciasComponent } from './pages/secuencias/secuencias.component';
+import { ModificarSecuenciaComponent } from './pages/modificar-secuencia/modificar-secuencia.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent, canActivate: [AuthenticacionGuard] },
   { path: 'configuracion/:id', component: SeleccionComponent, canActivate: [AuthenticacionGuard] },
   { path: 'secuencia', component: SecuenciasComponent, canActivate: [AuthenticacionGuard] },
+  { path: 'modificarSecuencia', component: ModificarSecuenciaComponent, canActivate: [AuthenticacionGuard] },
 ];
 
 @NgModule({
