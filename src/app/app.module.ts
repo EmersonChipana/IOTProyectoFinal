@@ -17,6 +17,9 @@ import { SeleccionComponent } from './pages/seleccion/seleccion.component';
 import { IntegrantesComponent } from './components/integrantes/integrantes.component';
 import { UserContainerComponent } from './components/user-container/user-container.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
+import { SecuenciasComponent } from './pages/secuencias/secuencias.component';
+import { Card2Component } from './components/card2/card2.component';
+import { ModificarSecuenciaComponent } from './pages/modificar-secuencia/modificar-secuencia.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { FormularioComponent } from './components/formulario/formulario.componen
     SeleccionComponent,
     IntegrantesComponent,
     UserContainerComponent,
-    FormularioComponent
+    FormularioComponent,
+    SecuenciasComponent,
+    Card2Component,
+    ModificarSecuenciaComponent
   ],
   imports: [
     BrowserModule,

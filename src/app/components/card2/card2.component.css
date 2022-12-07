@@ -1,0 +1,19 @@
+
+/*
+do a card with a title and a description and border
+*/
+
+.card-2 {
+  width: 300px;
+  height: 100%;
+  background-color: #3e3e3e;
+  color :rgb(255, 255, 255);
+  border-radius: 5px;
+  border-color: white;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.837);
+  padding: 20px;
+  word-break: break-word;
+
+  cursor: pointer;
+}
+ 
