@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Esp32 } from 'src/app/interfaces/esp32';
+import { Esp32Service } from 'src/app/services/esp32Service/esp32.service';
 
 @Component({
   selector: 'app-seleccion',
@@ -8,10 +10,16 @@ import { Router } from '@angular/router';
 })
 export class SeleccionComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  esp!: Esp32;
 
-  ngOnInit(): void {
-    
+  id: string = '';
+
+  constructor(private router:Router, private rutaActiva: ActivatedRoute, private rdb:Esp32Service) { }
+
+  async ngOnInit(): Promise<void> {
+    this.id = this.rutaActiva.snapshot.params["id"];
+    this.esp = await this.rdb.getEsp32(this.id) as Esp32;
+    console.log(this.esp);
   }
 
   inputColor() {
@@ -19,11 +27,9 @@ export class SeleccionComponent implements OnInit {
     let color = (<HTMLInputElement>document.getElementById("color")).value;
     //convertir color a rgb
     let rgb = this.hexToRgb(color);
-    console.log(rgb);
     if(rgb != null) {
       //cambiar el color del background
       document.body.style.background = `radial-gradient(circle, rgba(33,38,34,1) 46%, rgba(${rgb.r},${rgb.g},${rgb.b}, 1) 87%`;
-      console.log(document.body.style.background);
     }
   }
 
@@ -34,6 +40,21 @@ export class SeleccionComponent implements OnInit {
       g: parseInt(result[2], 16),
       b: parseInt(result[3], 16)
     } : null;
+  }
+
+  RgbToHex(r: number, g: number, b: number) {
+    return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+  }
+
+  cambiarColor(){
+    let color = (<HTMLInputElement>document.getElementById("color")).value;
+    let rgb = this.hexToRgb(color);
+    if(rgb != null){
+      this.esp.blue = rgb.b;
+      this.esp.green = rgb.g;
+      this.esp.red = rgb.r;
+      this.rdb.updateEsp32(this.id, this.esp);
+    }
   }
 
 

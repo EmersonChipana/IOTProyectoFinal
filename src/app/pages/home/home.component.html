@@ -14,16 +14,20 @@
   <div class="row">
     <div class="col">
       <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Agregar Foco
-</button>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Agregar Foco
+    </button>
 
     </div>
   </div>
 </div>
 
-<div class="container mt-5 mb-5">
+<app-formulario></app-formulario>
+
+<div class="container mt-5 mb-5 text-center">
   <div class="row">
-    <app-card></app-card>
+    <div class="col" *ngFor="let foco of misFocos">
+      <app-card [id]="foco.id" [titulo]="foco.nombre"></app-card>
+    </div>
   </div>
 </div>

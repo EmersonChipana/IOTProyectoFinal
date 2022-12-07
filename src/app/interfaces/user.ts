@@ -1,7 +1,7 @@
 export interface User {
-    id: number;
+    id: string;
     focos: Foco[];
-    secuencia: Secuencia[];
+    secuencias: Secuencia[];
 }
 
 
