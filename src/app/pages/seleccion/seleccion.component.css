@@ -1,16 +1,23 @@
 
-/* circle-color un contenedor circulo con vordes y color blanco*/
-.circle-color{
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background-color: #fff;
-    border: 3px solid #000;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-    font-weight: bold;
-    color: #000;
+.color{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 100px;
+    background-color: transparent;
+    width: 100px;
+    border: none;
+    cursor: pointer;
+}
+
+.color::-webkit-color-swatch{
+    border-radius: 15px;
+    border: 7px solid black;
+
+}
+
+.color::-moz-color-swatch{
+    border-radius: 15px;
+    border: 7px solid black;
+    
 }
