@@ -9,6 +9,9 @@
     <div class="col">
       <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Agregar</button>
     </div>
+    <div class="col">
+      <button type="button" class="btn btn-danger"  data-bs-toggle="modal" data-bs-target="#exampleModal2">Eliminar</button>
+    </div>
   </div>
 </div>
 
@@ -40,6 +43,23 @@
 <div class="container text-center my-5">
   <div class="row">
     <button type="button" class="btn btn-success btn-lg" (click)="iniciarSecuencia()">Iniciar Secuencia</button>
+  </div>
+</div>
+
+
+<!-- MODAL ELIMINAR -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="color: black;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">¿Desea eliminar esta secuencia?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="eliminarSecuencia()">Eliminar</button>
+      </div>
+    </div>
   </div>
 </div>
 

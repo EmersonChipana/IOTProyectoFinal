@@ -2,13 +2,14 @@
     <h5 class="card-title">{{titulo}} </h5>
     <img class="card-img-top" src="https://imagenpng.com/wp-content/uploads/2015/04/foco-1.png" alt="Card image cap">
     <div class="card-body" >
-      <button (click)= "iniciarsesion()" class="btn my-3">Configuración</button>
-      <div class="onoffswitch">
-        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
-        <label class="onoffswitch-label" for="myonoffswitch">
-          <div class="onoffswitch-inner"></div>
-          <div class="onoffswitch-switch"></div>
-        </label>
+      <div class="container">
+        <div class="row">
+          <button (click)= "iniciarsesion()" class="btn-c my-3">Configuración</button>
+        </div>
+        <div class="row">
+          <button type="button" class="btn btn-success" *ngIf="!estado" (click)="onOffEsp(true)" >Encender</button>
+          <button type="button" class="btn btn-danger" *ngIf="estado" (click)="onOffEsp(false)">Apagar</button>
+        </div>
       </div>
     </div>
 </div>

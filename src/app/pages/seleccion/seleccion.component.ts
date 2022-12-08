@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Esp32 } from 'src/app/interfaces/esp32';
 import { Esp32Service } from 'src/app/services/esp32Service/esp32.service';
 
+
 @Component({
   selector: 'app-seleccion',
   templateUrl: './seleccion.component.html',
@@ -14,11 +15,13 @@ export class SeleccionComponent implements OnInit {
   id: string = '';
   estado: boolean = false;
   color: string = '';
+  nombre: string = '';
 
   constructor(private router:Router, private rutaActiva: ActivatedRoute, private rdb:Esp32Service) { }
 
   async ngOnInit(): Promise<void> {
     this.id = this.rutaActiva.snapshot.params["id"];
+    this.nombre = this.rutaActiva.snapshot.params["nombre"];
     this.esp = await this.rdb.getEsp32(this.id) as Esp32;
     this.estado = this.esp.estado;
     this.color = this.RgbToHex(this.esp.red, this.esp.green, this.esp.blue);

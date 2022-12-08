@@ -62,7 +62,7 @@
     cursor: pointer;
 }
 
-button{
+.btn-c{
     background-color: #3e3e3e;
     border: white;
     color: white;
@@ -75,7 +75,7 @@ button{
     cursor: pointer;
 }
 
-button:hover{
+.btn-c:hover{
     background-color: #000000;
 }
 

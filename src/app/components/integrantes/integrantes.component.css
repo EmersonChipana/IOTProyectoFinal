@@ -1,0 +1,10 @@
+.int-img{
+    width: 250px;
+    height: 250px;
+    border-radius: 40px;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 20px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.837);
+
+}

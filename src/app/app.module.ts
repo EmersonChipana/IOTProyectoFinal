@@ -21,6 +21,8 @@ import { SecuenciasComponent } from './pages/secuencias/secuencias.component';
 import { Card2Component } from './components/card2/card2.component';
 import { ModificarSecuenciaComponent } from './pages/modificar-secuencia/modificar-secuencia.component';
 import { FormularioSecuenciaComponent } from './components/formulario-secuencia/formulario-secuencia.component';
+import { ContactoComponent } from './pages/contacto/contacto.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { FormularioSecuenciaComponent } from './components/formulario-secuencia/
     SecuenciasComponent,
     Card2Component,
     ModificarSecuenciaComponent,
-    FormularioSecuenciaComponent
+    FormularioSecuenciaComponent,
+    ContactoComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

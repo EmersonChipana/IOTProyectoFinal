@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Esp32 } from 'src/app/interfaces/esp32';
 import { Loop, Secuencia, User } from 'src/app/interfaces/user';
 import { Esp32Service } from 'src/app/services/esp32Service/esp32.service';
@@ -17,7 +17,7 @@ export class ModificarSecuenciaComponent implements OnInit {
   nombre!: String;
   listaFocos: String[] = [];
 
-  constructor(private userService:UserService, private rutaActiva:ActivatedRoute, private rdb: Esp32Service){ }
+  constructor(private userService:UserService, private rutaActiva:ActivatedRoute, private rdb: Esp32Service, private route: Router){ }
 
   async ngOnInit(): Promise<void> {
     this.index =  this.rutaActiva.snapshot.params['id'];
@@ -108,6 +108,13 @@ export class ModificarSecuenciaComponent implements OnInit {
       esp.estado = false;
       this.rdb.updateEsp32(this.loops[0].foco as string, esp);
     }, total*1000);
+  }
+
+  eliminarSecuencia(){
+    this.user.secuencias.splice(this.index,1);
+    this.userService.updateUser(localStorage.getItem("uid") as string, this.user);
+    alert("Secuencia eliminada");
+    this.route.navigate(['/secuencia']);
   }
 
 }

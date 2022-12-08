@@ -18,9 +18,9 @@
 
 <app-formulario-secuencia></app-formulario-secuencia>
 
-<div class="container my-5">
+<div class="container my-5 text-center">
   <div class="row" >
-    <div class="col" *ngFor="let sec of secuencias; let indice=index">
+    <div class="col my-5" *ngFor="let sec of secuencias; let indice=index">
       <app-card2 [id]="indice" [nombre]="sec.nombre"></app-card2>
 
     </div>
