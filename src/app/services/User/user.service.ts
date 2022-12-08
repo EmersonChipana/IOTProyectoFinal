@@ -36,13 +36,6 @@ export class UserService {
     });
   }
 
-
-  getSecuencias(id:string): Observable<Secuencia[]>{
-    const userRef = collection(this.fs, 'users', id, 'secuencias');
-    return collectionData(userRef) as Observable<Secuencia[]>;
-  }
-
-
   userExist(id:string){
     const userRef = doc(this.fs, 'users', id);
     if(getDoc(userRef) == null){

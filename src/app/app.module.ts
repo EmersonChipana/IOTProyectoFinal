@@ -20,6 +20,7 @@ import { FormularioComponent } from './components/formulario/formulario.componen
 import { SecuenciasComponent } from './pages/secuencias/secuencias.component';
 import { Card2Component } from './components/card2/card2.component';
 import { ModificarSecuenciaComponent } from './pages/modificar-secuencia/modificar-secuencia.component';
+import { FormularioSecuenciaComponent } from './components/formulario-secuencia/formulario-secuencia.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ModificarSecuenciaComponent } from './pages/modificar-secuencia/modific
     FormularioComponent,
     SecuenciasComponent,
     Card2Component,
-    ModificarSecuenciaComponent
+    ModificarSecuenciaComponent,
+    FormularioSecuenciaComponent
   ],
   imports: [
     BrowserModule,
