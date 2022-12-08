@@ -44,4 +44,14 @@ export class UserService {
     return true;
   }
 
+  async getNombreFocos(id:string){
+    const userRef = doc(this.fs, 'users', id);
+    let user: User = (await getDoc(userRef)).data() as User;
+    let focos: String[] = [];
+    user.focos.forEach(foco => {
+      focos.push(foco.nombre);
+    });
+    return focos;
+  }
+
 }

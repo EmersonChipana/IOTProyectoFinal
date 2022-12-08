@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-card2',
@@ -10,9 +11,13 @@ export class Card2Component implements OnInit {
   @Input() nombre!: String;
   @Input() id!: number;
 
-  constructor() { }
+  constructor(private route: Router) { }
 
   ngOnInit(): void {
+  }
+
+  goSecuencia(){
+    this.route.navigate(['/modificarSecuencia', this.id]);
   }
 
 }

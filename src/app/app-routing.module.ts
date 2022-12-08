@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent, canActivate: [AuthenticacionGuard] },
   { path: 'configuracion/:id', component: SeleccionComponent, canActivate: [AuthenticacionGuard] },
   { path: 'secuencia', component: SecuenciasComponent, canActivate: [AuthenticacionGuard] },
-  { path: 'modificarSecuencia', component: ModificarSecuenciaComponent, canActivate: [AuthenticacionGuard] },
+  { path: 'modificarSecuencia/:id', component: ModificarSecuenciaComponent, canActivate: [AuthenticacionGuard] },
 ];
 
 @NgModule({
