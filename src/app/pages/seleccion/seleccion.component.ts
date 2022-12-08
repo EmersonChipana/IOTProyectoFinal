@@ -11,25 +11,36 @@ import { Esp32Service } from 'src/app/services/esp32Service/esp32.service';
 export class SeleccionComponent implements OnInit {
 
   esp!: Esp32;
-
   id: string = '';
+  estado: boolean = false;
+  color: string = '';
 
   constructor(private router:Router, private rutaActiva: ActivatedRoute, private rdb:Esp32Service) { }
 
   async ngOnInit(): Promise<void> {
     this.id = this.rutaActiva.snapshot.params["id"];
     this.esp = await this.rdb.getEsp32(this.id) as Esp32;
-    console.log(this.esp);
+    this.estado = this.esp.estado;
+    this.color = this.RgbToHex(this.esp.red, this.esp.green, this.esp.blue);
+    if(this.estado){
+      (<HTMLInputElement>document.getElementById("color")).value = this.color;
+      this.inputColor();
+      (<HTMLInputElement>document.getElementById("myonoffswitch")).checked = this.estado;
+    }else{
+      document.body.style.background = `radial-gradient(circle, rgba(33,38,34,1) 46%, rgba(${0},${0},${0}, 1) 87%`;
+    }
   }
 
+ 
+
   inputColor() {
-    //obtener el color del input
-    let color = (<HTMLInputElement>document.getElementById("color")).value;
-    //convertir color a rgb
-    let rgb = this.hexToRgb(color);
-    if(rgb != null) {
-      //cambiar el color del background
-      document.body.style.background = `radial-gradient(circle, rgba(33,38,34,1) 46%, rgba(${rgb.r},${rgb.g},${rgb.b}, 1) 87%`;
+    if(this.estado){
+      let color = (<HTMLInputElement>document.getElementById("color")).value;
+      this.color = color;
+      let rgb = this.hexToRgb(color);
+      if(rgb != null){
+        document.body.style.background = `radial-gradient(circle, rgba(33,38,34,1) 46%, rgba(${rgb.r},${rgb.g},${rgb.b}, 1) 87%`;
+      }
     }
   }
 
@@ -48,6 +59,7 @@ export class SeleccionComponent implements OnInit {
 
   cambiarColor(){
     let color = (<HTMLInputElement>document.getElementById("color")).value;
+    this.color = color;
     let rgb = this.hexToRgb(color);
     if(rgb != null){
       this.esp.blue = rgb.b;
@@ -57,5 +69,18 @@ export class SeleccionComponent implements OnInit {
     }
   }
 
+
+  cambiarEstado(){
+    let newEstado = (<HTMLInputElement>document.getElementById("myonoffswitch")).checked;
+    this.esp.estado = newEstado;
+    this.estado = newEstado;
+    this.rdb.updateEsp32(this.id, this.esp);
+    if(this.estado){
+      (<HTMLInputElement>document.getElementById("color")).value = this.color;
+      this.inputColor();
+    }else{
+      document.body.style.background = `radial-gradient(circle, rgba(33,38,34,1) 46%, rgba(${0},${0},${0}, 1) 87%`;
+    }
+  }
 
 }

@@ -11,6 +11,11 @@ export interface Foco{
 }
 
 export interface Secuencia{
+    nombre: String;
+    loops: Loop[];
+}
+
+export interface Loop{
     foco: String;
     time: number;
     red: number;
